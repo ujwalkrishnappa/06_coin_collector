@@ -3,7 +3,7 @@ Coin Collector (Lab Starter)
 
 Run with:  python3 main.py
 
-Controls: Arrow keys to move.
+Controls: Arrow keys to move, R to restart after game over.
 """
 
 import pygame
@@ -25,6 +25,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            engine.handle_event(event)
 
         keys = pygame.key.get_pressed()
         engine.handle_input(keys)
